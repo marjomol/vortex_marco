@@ -66,7 +66,7 @@
        COMMON /PROCESADORES/ NUM
 
        INTEGER IS_MASCLET_B
-       IS_MASCLET_B=0
+       IS_MASCLET_B=1
 
 *      READING DATA
        CALL NOMFILE(ITER,FILNOM1,FILNOM2,FILNOM3)
@@ -143,8 +143,8 @@ C       SCR4_INT=0
        READ(31) !(((PRES(I,J,K),I=1,N1),J=1,N2),K=1,N3)
        READ(31) !(((POT(I,J,K),I=1,N1),J=1,N2),K=1,N3)
        READ(31) !OPOT
-       READ(31) !(((TTT(I,J,K),I=1,N1),J=1,N2),K=1,N3)
-       READ(31) !!new: metalicity!! depends on MASCLET version!: TRACER
+CNOCOOL       READ(31) !(((TTT(I,J,K),I=1,N1),J=1,N2),K=1,N3)
+CNOCOOL       READ(31) !!new: metalicity!! depends on MASCLET version!: TRACER
        READ(31) (((SCR4_INT(I,J,K),I=1,N1),J=1,N2),K=1,N3)
        CR0AMR(1:NX,1:NY,1:NZ)=SCR4_INT(1:NX,1:NY,1:NZ)
        IF (IS_MASCLET_B.EQ.1) THEN 
@@ -165,6 +165,7 @@ C       SCR4_INT=0
          ALLOCATE(SCR4_INT(NAMRX,NAMRY,NAMRZ))
          SCR4_INT=0
          DO I=LOW1,LOW2
+         write(*,*) ir,low1,low2,i
           N1=PATCHNX(I)
           N2=PATCHNY(I)
           N3=PATCHNZ(I)
@@ -179,8 +180,8 @@ C       SCR4_INT=0
           READ(31) !(((PRES21(IX,J,K,I),IX=1,N1),J=1,N2),K=1,N3)
           READ(31) !(((POT1(IX,J,K,I),IX=1,N1),J=1,N2),K=1,N3)
           READ(31) !OPOT
-          READ(31) !(((TTT1(IX,J,K,I),IX=1,N1),J=1,N2),K=1,N3)
-          READ(31) !!new: metalicity!! depends on MASCLET version! TRACER
+CNOCOOL          READ(31) !(((TTT1(IX,J,K,I),IX=1,N1),J=1,N2),K=1,N3)
+CNOCOOL          READ(31) !!new: metalicity!! depends on MASCLET version! TRACER
           READ(31) (((SCR4_INT(IX,J,K),IX=1,N1),J=1,N2),K=1,N3)
           CR0AMR1(:,:,:,I)=SCR4_INT(:,:,:)
           READ(31) !!(((SCR4_INT(IX,J,K),IX=1,N1),J=1,N2),K=1,N3)

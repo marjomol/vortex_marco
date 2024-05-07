@@ -1,21 +1,21 @@
-*************PARAMETERS FOR VORTEX**********
-files: first, last, every ---50-4050------------->
-4000,4000,50
-cells on each direction,nx,ny,nz --------->
+*                         VORTEX PARAMETERS FILE                      *
+files: first, last, every -------------------------------------------->
+2100,2100,50
+Cells on each direction (NX,NY,NZ) ----------------------------------->
 128,128,128
-initial redshift, box size --------------->
+Initial redshift, box size ------------------------------------------->
 100.0,40.0
-matter density parameter, dimensionless hubble param., fraction of DM -->
+Omega matter, Hubble constant (h), fraction of DM to total mass ------>
 0.31,0.678,0.845
-numero de nivels  ------------------------>
-9
+Number of levels  ---------------------------------------------------->
+7
 SOR presion parameter, SOR max iter, border for AMR patches ---------->
 1e-9,1000,2
-Error threshold ---------->
+Error threshold ------------------------------------------------------>
 0.05
-flags_writing (1=yes; 0=no): verbose, write_divrot, write_potentials, write_velocities---------------->
+Flags_writing (1=yes; 0=no): verbose, write_divrot, write_potentials, write_velocities---->
 1,1,1,1
-multiscale filter: apply filter, write lengths, tolerance, step, maxit ------------------->
+Multiscale filter: apply filter, write lengths, tolerance, step, maxit ------------------->
 0,1,0.1,1.05,200
-particles (1=yes; 0=no, work with gas), number of levels of the particle grid ------------->
-1,12
+Particles (1=yes; 0=no, work with gas), number of levels of the particle grid ------------>
+0,7

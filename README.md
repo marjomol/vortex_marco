@@ -35,5 +35,5 @@ The routines in this programme are distributed in the following files:
 - ``boundaries.f``: special treatments for patches boundaries (currently deprecated)
 - ``filter.f``: filter out turbulent motions using a multi-scale algorithm
 - ``writer.f``: write the output files
-- ``reader.f``: read the input data (may need to be adapted to read data from other simulation codes
+- ``reader.f``: read the input data (may need to be adapted to read data from other simulation codes)
 - ``nomfile.f``: generates the filenames for I/O
